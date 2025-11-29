@@ -1,5 +1,5 @@
-Game Trainer for Shock Troopers (GOG Version)
-Setup Version: setup_shock_troopers_gog-3_(12274)
+# Game Trainer for Shock Troopers (GOG Version)
+## Setup Version: setup_shock_troopers_gog-3_(12274)
 
 Values:
 
