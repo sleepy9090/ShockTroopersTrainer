@@ -9,14 +9,10 @@
  */
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShockTroopersTrainer
@@ -172,15 +168,15 @@ namespace ShockTroopersTrainer
         {
             Dictionary<int, string> weaponTypesDictionary = new Dictionary<int, string>
             {
-                {  0, " 0  - Normal"  },
-                {  4, " 4  - Heavy"   },
-                {  5, " 8  - Vulcan"  },
-                {  12, " 12 - 3-Way"   },
-                {  16, " 16 - Buster"  },
-                {  20, " 20 - Flame"   },
-                {  24, " 24 - Rocket"  },
-                {  28, " 28 - Missile" },
-                {  32, " 32 - Hyper"   }
+                {  0,  " 0 - Normal"  },
+                {  4,  " 4 - Heavy"   },
+                {  5,  " 8 - Vulcan"  },
+                {  12, "12 - 3-Way"   },
+                {  16, "16 - Buster"  },
+                {  20, "20 - Flame"   },
+                {  24, "24 - Rocket"  },
+                {  28, "28 - Missile" },
+                {  32, "32 - Hyper"   }
             };
 
             comboBoxP1WeaponTypeRead.Items.Clear();
@@ -210,6 +206,7 @@ namespace ShockTroopersTrainer
 
         private void PopulateScore()
         {
+            // TODO: This needs to include hex? or its parsing wrong.
             for (int i = 0; i < 100; i++)
             {
                 comboBoxP1Score1.Items.Add(i);
@@ -1307,12 +1304,9 @@ namespace ShockTroopersTrainer
                             + ex);
                     }
                 }
-
                 #endregion
 
             }
         }
-
-
     }
 }
