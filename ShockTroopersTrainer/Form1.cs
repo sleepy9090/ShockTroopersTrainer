@@ -246,9 +246,9 @@ namespace ShockTroopersTrainer
             textBoxP1VehicleHealthCountWrite.Enabled = false;
             textBoxP2VehicleHealthCountWrite.Enabled = false;
 
-            textBoxLevelTimerWrite.Text = "159"; //99h
+            textBoxLevelTimerWrite.Text = "153"; // 153h = 99d, higher can kill the player, overflow?
 
-            textBoxP1HealthCountWrite.Text = "128";
+            textBoxP1HealthCountWrite.Text = "128"; // 129+ is garbled
             textBoxP1InvincibilityTimerWrite.Text = "255"; // Invincible
             textBoxP1BombCountTBC1Write.Text = "255";
             textBoxP1BombCountTBC2Write.Text = "255";
@@ -256,9 +256,9 @@ namespace ShockTroopersTrainer
             textBoxP1AmmoCountWrite.Text = "209"; // 0 - 209 displayable, rest is garbled, max 65535
             textBoxP1VehicleAmmoCountWrite.Text = "255";
             textBoxP1VehicleHealthCountWrite.Text = "255";
-            textBoxP1CreditsCountWrite.Text = "255";
+            textBoxP1CreditsCountWrite.Text = "153"; // Infinite
 
-            textBoxP2HealthCountWrite.Text = "128";
+            textBoxP2HealthCountWrite.Text = "128"; // 129+ is garbled
             textBoxP2InvincibilityTimerWrite.Text = "255"; // Invincible
             textBoxP2BombCountTBC1Write.Text = "255";
             textBoxP2BombCountTBC2Write.Text = "255";
@@ -266,7 +266,7 @@ namespace ShockTroopersTrainer
             textBoxP2AmmoCountWrite.Text = "209"; // 0 - 209 displayable, rest is garbled, max 65535
             textBoxP2VehicleAmmoCountWrite.Text = "255";
             textBoxP2VehicleHealthCountWrite.Text = "255";
-            textBoxP2CreditsCountWrite.Text = "255";
+            textBoxP2CreditsCountWrite.Text = "153"; // Infinite
 
             textBoxLevelTimerRead.Enabled = false;
 
@@ -334,7 +334,7 @@ namespace ShockTroopersTrainer
                 processName = textBoxProcessName.Text;
             }
 
-            // Game process: mslugx
+            // Game process: shocktro
             game = Process.GetProcessesByName(processName).FirstOrDefault();
             if (game == null)
             {
@@ -605,7 +605,7 @@ namespace ShockTroopersTrainer
                 {
                     try
                     {
-                        // 255h = 153 displayed
+                        // 153h = 99d
                         if (int.TryParse(textBoxLevelTimerWrite.Text, out int levelTimer)
                             && (levelTimer >= 0 && levelTimer <= 255))
                         {
@@ -642,12 +642,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Health Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Health Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Health Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Health Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -667,12 +667,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Health Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Health Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Health Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Health Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -696,12 +696,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Invincibility Timer value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Invincibility Timer value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Invincibility Timer value must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Invincibility Timer value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -721,12 +721,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Invincibility Timer value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Invincibility Timer value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Invincibility Timer value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Invincibility Timer value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -749,12 +749,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Bomb Count 1 value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Bomb Count 1 value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Bomb value 1 must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Bomb Count 1 value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -773,12 +773,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Bomb Count 2 value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Bomb Count 2 value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Bomb value 2 must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Bomb Count 2 value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -797,12 +797,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Bomb Count 3 value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Bomb Count 3 value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Bomb value 3 must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Bomb Count 3 value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -821,12 +821,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Bomb Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Bomb Count 1 value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Bomb Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Bomb Count 1 value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -845,12 +845,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Bomb Count 2 value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Bomb Count 2 value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Bomb Count 2 value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Bomb Count 2 value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -869,12 +869,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Bomb Count value 3 must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Bomb Count value 3 must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Bomb Count value 3 must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Bomb Count value 3 must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -897,12 +897,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Vehicle Ammo Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Vehicle Ammo Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Vehicle Ammo Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Vehicle Ammo Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -921,12 +921,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Vehicle Ammo Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Vehicle Ammo Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Vehicle Ammo Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Vehicle Ammo Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -949,12 +949,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Vehicle Health Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Vehicle Health Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Vehicle Health Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Vehicle Health Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -973,12 +973,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Vehicle Health Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Vehicle Health Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Vehicle Health Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Vehicle Health Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -1001,12 +1001,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Credits Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Credits Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Credits Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P1 Credits Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -1025,12 +1025,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Credits Count value must be between 0 and 255." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Credits Count value must be between 0 and 255." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Credits Count value must be between 0 and 255."
+                        textBoxLog.AppendText("P2 Credits Count value must be between 0 and 255."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -1054,12 +1054,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Ammo Count value must be between 0 and 65535." + Environment.NewLine);
+                            textBoxLog.AppendText("P1 Ammo Count value must be between 0 and 65535." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Ammo value must be between 0 and 65535."
+                        textBoxLog.AppendText("P1 Ammo value must be between 0 and 65535."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -1079,12 +1079,12 @@ namespace ShockTroopersTrainer
                         }
                         else
                         {
-                            textBoxLog.AppendText("Ammo Count value must be between 0 and 65535." + Environment.NewLine);
+                            textBoxLog.AppendText("P2 Ammo Count value must be between 0 and 65535." + Environment.NewLine);
                         }
                     }
                     catch (Exception ex)
                     {
-                        textBoxLog.AppendText("Ammo value must be between 0 and 65535."
+                        textBoxLog.AppendText("P2 Ammo value must be between 0 and 65535."
                             + Environment.NewLine
                             + "Exception: "
                             + ex);
@@ -1096,7 +1096,7 @@ namespace ShockTroopersTrainer
 
                 #region Score
 
-                /*
+                /* TODO: Figure out score, mis of hex and dec between displaying? hex not shown but decimal alone is off when displayed
                  * P1 Score
                     byte, hex
                     example score: 34127856
@@ -1204,7 +1204,39 @@ namespace ShockTroopersTrainer
                 {
                     try
                     {
-                        comboBoxP1WeaponTypeRead.SelectedIndex = weaponTypeP1;
+                        switch (weaponTypeP1)
+                        {
+                            case 0:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 0;
+                                break;
+                            case 4:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 1;
+                                break;
+                            case 8:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 2;
+                                break;
+                            case 12:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 3;
+                                break;
+                            case 16:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 4;
+                                break;
+                            case 20:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 5;
+                                break;
+                            case 24:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 6;
+                                break;
+                            case 28:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 7;
+                                break;
+                            case 32:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 8;
+                                break;
+                            default:
+                                comboBoxP1WeaponTypeRead.SelectedIndex = 0;
+                                break;
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1233,7 +1265,39 @@ namespace ShockTroopersTrainer
                 {
                     try
                     {
-                        comboBoxP2WeaponTypeRead.SelectedIndex = weaponTypeP2;
+                        switch (weaponTypeP2)
+                        {
+                            case 0:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 0;
+                                break;
+                            case 4:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 1;
+                                break;
+                            case 8:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 2;
+                                break;
+                            case 12:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 3;
+                                break;
+                            case 16:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 4;
+                                break;
+                            case 20:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 5;
+                                break;
+                            case 24:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 6;
+                                break;
+                            case 28:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 7;
+                                break;
+                            case 32:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 8;
+                                break;
+                            default:
+                                comboBoxP2WeaponTypeRead.SelectedIndex = 0;
+                                break;
+                        }
                     }
                     catch (Exception ex)
                     {
