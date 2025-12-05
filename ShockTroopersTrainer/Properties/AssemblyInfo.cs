@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ShockTroopersTrainer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A trainer for the GOG release of the game Shock Troopers")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Shawn M. Crawford [sleepy9090]")]
 [assembly: AssemblyProduct("ShockTroopersTrainer")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Shawn M. Crawford [sleepy9090] 2025")]
+[assembly: AssemblyTrademark("Shawn M. Crawford [sleepy9090]")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

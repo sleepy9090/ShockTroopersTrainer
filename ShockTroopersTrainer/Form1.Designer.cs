@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBoxOverride = new System.Windows.Forms.GroupBox();
             this.checkBoxModuleName = new System.Windows.Forms.CheckBox();
             this.checkBoxProcessName = new System.Windows.Forms.CheckBox();
@@ -36,6 +37,18 @@
             this.textBoxModuleName = new System.Windows.Forms.TextBox();
             this.textBoxProcessName = new System.Windows.Forms.TextBox();
             this.groupBoxPlayer2 = new System.Windows.Forms.GroupBox();
+            this.textBoxP2BombCountTBC3Write = new System.Windows.Forms.TextBox();
+            this.textBoxP2BombCountTBC3Read = new System.Windows.Forms.TextBox();
+            this.checkBoxP2BombCountTBC3 = new System.Windows.Forms.CheckBox();
+            this.labelP2BombCountTBC3 = new System.Windows.Forms.Label();
+            this.textBoxP2BombCountTBC2Write = new System.Windows.Forms.TextBox();
+            this.textBoxP2BombCountTBC1Write = new System.Windows.Forms.TextBox();
+            this.textBoxP2BombCountTBC2Read = new System.Windows.Forms.TextBox();
+            this.textBoxP2BombCountTBC1Read = new System.Windows.Forms.TextBox();
+            this.checkBoxP2BombCountTBC2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxP2BombCountTBC1 = new System.Windows.Forms.CheckBox();
+            this.labelP2BombCountTBC2 = new System.Windows.Forms.Label();
+            this.labelP2BombCountTBC1 = new System.Windows.Forms.Label();
             this.comboBoxP2Score4 = new System.Windows.Forms.ComboBox();
             this.comboBoxP2Score3 = new System.Windows.Forms.ComboBox();
             this.comboBoxP2Score2 = new System.Windows.Forms.ComboBox();
@@ -72,6 +85,10 @@
             this.labelP2HealthCount = new System.Windows.Forms.Label();
             this.comboBoxP2WeaponTypeRead = new System.Windows.Forms.ComboBox();
             this.groupBoxPlayer1 = new System.Windows.Forms.GroupBox();
+            this.textBoxP1BombCountTBC3Write = new System.Windows.Forms.TextBox();
+            this.textBoxP1BombCountTBC3Read = new System.Windows.Forms.TextBox();
+            this.checkBoxP1BombCountTBC3 = new System.Windows.Forms.CheckBox();
+            this.labelP1BombCountTBC3 = new System.Windows.Forms.Label();
             this.comboBoxP1Score4 = new System.Windows.Forms.ComboBox();
             this.comboBoxP1Score3 = new System.Windows.Forms.ComboBox();
             this.comboBoxP1Score2 = new System.Windows.Forms.ComboBox();
@@ -123,22 +140,6 @@
             this.groupBoxLog = new System.Windows.Forms.GroupBox();
             this.textBoxLog = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxP1BombCountTBC3Write = new System.Windows.Forms.TextBox();
-            this.textBoxP1BombCountTBC3Read = new System.Windows.Forms.TextBox();
-            this.checkBoxP1BombCountTBC3 = new System.Windows.Forms.CheckBox();
-            this.labelP1BombCountTBC3 = new System.Windows.Forms.Label();
-            this.textBoxP2BombCountTBC3Write = new System.Windows.Forms.TextBox();
-            this.textBoxP2BombCountTBC3Read = new System.Windows.Forms.TextBox();
-            this.checkBoxP2BombCountTBC3 = new System.Windows.Forms.CheckBox();
-            this.labelP2BombCountTBC3 = new System.Windows.Forms.Label();
-            this.textBoxP2BombCountTBC2Write = new System.Windows.Forms.TextBox();
-            this.textBoxP2BombCountTBC1Write = new System.Windows.Forms.TextBox();
-            this.textBoxP2BombCountTBC2Read = new System.Windows.Forms.TextBox();
-            this.textBoxP2BombCountTBC1Read = new System.Windows.Forms.TextBox();
-            this.checkBoxP2BombCountTBC2 = new System.Windows.Forms.CheckBox();
-            this.checkBoxP2BombCountTBC1 = new System.Windows.Forms.CheckBox();
-            this.labelP2BombCountTBC2 = new System.Windows.Forms.Label();
-            this.labelP2BombCountTBC1 = new System.Windows.Forms.Label();
             this.groupBoxOverride.SuspendLayout();
             this.groupBoxPlayer2.SuspendLayout();
             this.groupBoxPlayer1.SuspendLayout();
@@ -263,10 +264,106 @@
             this.groupBoxPlayer2.Controls.Add(this.comboBoxP2WeaponTypeRead);
             this.groupBoxPlayer2.Location = new System.Drawing.Point(527, 9);
             this.groupBoxPlayer2.Name = "groupBoxPlayer2";
-            this.groupBoxPlayer2.Size = new System.Drawing.Size(250, 453);
+            this.groupBoxPlayer2.Size = new System.Drawing.Size(250, 371);
             this.groupBoxPlayer2.TabIndex = 15;
             this.groupBoxPlayer2.TabStop = false;
             this.groupBoxPlayer2.Text = "Player 2";
+            // 
+            // textBoxP2BombCountTBC3Write
+            // 
+            this.textBoxP2BombCountTBC3Write.Location = new System.Drawing.Point(173, 125);
+            this.textBoxP2BombCountTBC3Write.Name = "textBoxP2BombCountTBC3Write";
+            this.textBoxP2BombCountTBC3Write.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP2BombCountTBC3Write.TabIndex = 96;
+            // 
+            // textBoxP2BombCountTBC3Read
+            // 
+            this.textBoxP2BombCountTBC3Read.Location = new System.Drawing.Point(117, 125);
+            this.textBoxP2BombCountTBC3Read.Name = "textBoxP2BombCountTBC3Read";
+            this.textBoxP2BombCountTBC3Read.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP2BombCountTBC3Read.TabIndex = 95;
+            // 
+            // checkBoxP2BombCountTBC3
+            // 
+            this.checkBoxP2BombCountTBC3.AutoSize = true;
+            this.checkBoxP2BombCountTBC3.Location = new System.Drawing.Point(229, 128);
+            this.checkBoxP2BombCountTBC3.Name = "checkBoxP2BombCountTBC3";
+            this.checkBoxP2BombCountTBC3.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxP2BombCountTBC3.TabIndex = 94;
+            this.checkBoxP2BombCountTBC3.UseVisualStyleBackColor = true;
+            // 
+            // labelP2BombCountTBC3
+            // 
+            this.labelP2BombCountTBC3.AutoSize = true;
+            this.labelP2BombCountTBC3.Location = new System.Drawing.Point(6, 129);
+            this.labelP2BombCountTBC3.Name = "labelP2BombCountTBC3";
+            this.labelP2BombCountTBC3.Size = new System.Drawing.Size(98, 13);
+            this.labelP2BombCountTBC3.TabIndex = 93;
+            this.labelP2BombCountTBC3.Text = "Bomb Count TBC3:";
+            // 
+            // textBoxP2BombCountTBC2Write
+            // 
+            this.textBoxP2BombCountTBC2Write.Location = new System.Drawing.Point(173, 99);
+            this.textBoxP2BombCountTBC2Write.Name = "textBoxP2BombCountTBC2Write";
+            this.textBoxP2BombCountTBC2Write.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP2BombCountTBC2Write.TabIndex = 92;
+            // 
+            // textBoxP2BombCountTBC1Write
+            // 
+            this.textBoxP2BombCountTBC1Write.Location = new System.Drawing.Point(173, 73);
+            this.textBoxP2BombCountTBC1Write.Name = "textBoxP2BombCountTBC1Write";
+            this.textBoxP2BombCountTBC1Write.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP2BombCountTBC1Write.TabIndex = 91;
+            // 
+            // textBoxP2BombCountTBC2Read
+            // 
+            this.textBoxP2BombCountTBC2Read.Location = new System.Drawing.Point(117, 99);
+            this.textBoxP2BombCountTBC2Read.Name = "textBoxP2BombCountTBC2Read";
+            this.textBoxP2BombCountTBC2Read.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP2BombCountTBC2Read.TabIndex = 90;
+            // 
+            // textBoxP2BombCountTBC1Read
+            // 
+            this.textBoxP2BombCountTBC1Read.Location = new System.Drawing.Point(117, 73);
+            this.textBoxP2BombCountTBC1Read.Name = "textBoxP2BombCountTBC1Read";
+            this.textBoxP2BombCountTBC1Read.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP2BombCountTBC1Read.TabIndex = 89;
+            // 
+            // checkBoxP2BombCountTBC2
+            // 
+            this.checkBoxP2BombCountTBC2.AutoSize = true;
+            this.checkBoxP2BombCountTBC2.Location = new System.Drawing.Point(229, 102);
+            this.checkBoxP2BombCountTBC2.Name = "checkBoxP2BombCountTBC2";
+            this.checkBoxP2BombCountTBC2.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxP2BombCountTBC2.TabIndex = 88;
+            this.checkBoxP2BombCountTBC2.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxP2BombCountTBC1
+            // 
+            this.checkBoxP2BombCountTBC1.AutoSize = true;
+            this.checkBoxP2BombCountTBC1.Location = new System.Drawing.Point(229, 76);
+            this.checkBoxP2BombCountTBC1.Name = "checkBoxP2BombCountTBC1";
+            this.checkBoxP2BombCountTBC1.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxP2BombCountTBC1.TabIndex = 87;
+            this.checkBoxP2BombCountTBC1.UseVisualStyleBackColor = true;
+            // 
+            // labelP2BombCountTBC2
+            // 
+            this.labelP2BombCountTBC2.AutoSize = true;
+            this.labelP2BombCountTBC2.Location = new System.Drawing.Point(6, 103);
+            this.labelP2BombCountTBC2.Name = "labelP2BombCountTBC2";
+            this.labelP2BombCountTBC2.Size = new System.Drawing.Size(98, 13);
+            this.labelP2BombCountTBC2.TabIndex = 86;
+            this.labelP2BombCountTBC2.Text = "Bomb Count TBC2:";
+            // 
+            // labelP2BombCountTBC1
+            // 
+            this.labelP2BombCountTBC1.AutoSize = true;
+            this.labelP2BombCountTBC1.Location = new System.Drawing.Point(6, 77);
+            this.labelP2BombCountTBC1.Name = "labelP2BombCountTBC1";
+            this.labelP2BombCountTBC1.Size = new System.Drawing.Size(98, 13);
+            this.labelP2BombCountTBC1.TabIndex = 85;
+            this.labelP2BombCountTBC1.Text = "Bomb Count TBC1:";
             // 
             // comboBoxP2Score4
             // 
@@ -602,10 +699,42 @@
             this.groupBoxPlayer1.Controls.Add(this.comboBoxP1WeaponTypeRead);
             this.groupBoxPlayer1.Location = new System.Drawing.Point(268, 9);
             this.groupBoxPlayer1.Name = "groupBoxPlayer1";
-            this.groupBoxPlayer1.Size = new System.Drawing.Size(250, 453);
+            this.groupBoxPlayer1.Size = new System.Drawing.Size(250, 371);
             this.groupBoxPlayer1.TabIndex = 14;
             this.groupBoxPlayer1.TabStop = false;
             this.groupBoxPlayer1.Text = "Player 1";
+            // 
+            // textBoxP1BombCountTBC3Write
+            // 
+            this.textBoxP1BombCountTBC3Write.Location = new System.Drawing.Point(176, 124);
+            this.textBoxP1BombCountTBC3Write.Name = "textBoxP1BombCountTBC3Write";
+            this.textBoxP1BombCountTBC3Write.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP1BombCountTBC3Write.TabIndex = 72;
+            // 
+            // textBoxP1BombCountTBC3Read
+            // 
+            this.textBoxP1BombCountTBC3Read.Location = new System.Drawing.Point(123, 124);
+            this.textBoxP1BombCountTBC3Read.Name = "textBoxP1BombCountTBC3Read";
+            this.textBoxP1BombCountTBC3Read.Size = new System.Drawing.Size(50, 20);
+            this.textBoxP1BombCountTBC3Read.TabIndex = 71;
+            // 
+            // checkBoxP1BombCountTBC3
+            // 
+            this.checkBoxP1BombCountTBC3.AutoSize = true;
+            this.checkBoxP1BombCountTBC3.Location = new System.Drawing.Point(229, 127);
+            this.checkBoxP1BombCountTBC3.Name = "checkBoxP1BombCountTBC3";
+            this.checkBoxP1BombCountTBC3.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxP1BombCountTBC3.TabIndex = 70;
+            this.checkBoxP1BombCountTBC3.UseVisualStyleBackColor = true;
+            // 
+            // labelP1BombCountTBC3
+            // 
+            this.labelP1BombCountTBC3.AutoSize = true;
+            this.labelP1BombCountTBC3.Location = new System.Drawing.Point(6, 128);
+            this.labelP1BombCountTBC3.Name = "labelP1BombCountTBC3";
+            this.labelP1BombCountTBC3.Size = new System.Drawing.Size(98, 13);
+            this.labelP1BombCountTBC3.TabIndex = 69;
+            this.labelP1BombCountTBC3.Text = "Bomb Count TBC3:";
             // 
             // comboBoxP1Score4
             // 
@@ -1004,7 +1133,7 @@
             this.groupBoxLog.Controls.Add(this.textBoxLog);
             this.groupBoxLog.Location = new System.Drawing.Point(12, 148);
             this.groupBoxLog.Name = "groupBoxLog";
-            this.groupBoxLog.Size = new System.Drawing.Size(250, 314);
+            this.groupBoxLog.Size = new System.Drawing.Size(250, 401);
             this.groupBoxLog.TabIndex = 17;
             this.groupBoxLog.TabStop = false;
             this.groupBoxLog.Text = "Log";
@@ -1015,144 +1144,18 @@
             this.textBoxLog.Multiline = true;
             this.textBoxLog.Name = "textBoxLog";
             this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxLog.Size = new System.Drawing.Size(235, 289);
+            this.textBoxLog.Size = new System.Drawing.Size(235, 376);
             this.textBoxLog.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 468);
+            this.pictureBox1.Image = global::ShockTroopersTrainer.Properties.Resources.shock_troopers;
+            this.pictureBox1.Location = new System.Drawing.Point(268, 386);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(765, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(509, 163);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBoxP1BombCountTBC3Write
-            // 
-            this.textBoxP1BombCountTBC3Write.Location = new System.Drawing.Point(176, 124);
-            this.textBoxP1BombCountTBC3Write.Name = "textBoxP1BombCountTBC3Write";
-            this.textBoxP1BombCountTBC3Write.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP1BombCountTBC3Write.TabIndex = 72;
-            // 
-            // textBoxP1BombCountTBC3Read
-            // 
-            this.textBoxP1BombCountTBC3Read.Location = new System.Drawing.Point(123, 124);
-            this.textBoxP1BombCountTBC3Read.Name = "textBoxP1BombCountTBC3Read";
-            this.textBoxP1BombCountTBC3Read.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP1BombCountTBC3Read.TabIndex = 71;
-            // 
-            // checkBoxP1BombCountTBC3
-            // 
-            this.checkBoxP1BombCountTBC3.AutoSize = true;
-            this.checkBoxP1BombCountTBC3.Location = new System.Drawing.Point(229, 127);
-            this.checkBoxP1BombCountTBC3.Name = "checkBoxP1BombCountTBC3";
-            this.checkBoxP1BombCountTBC3.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxP1BombCountTBC3.TabIndex = 70;
-            this.checkBoxP1BombCountTBC3.UseVisualStyleBackColor = true;
-            // 
-            // labelP1BombCountTBC3
-            // 
-            this.labelP1BombCountTBC3.AutoSize = true;
-            this.labelP1BombCountTBC3.Location = new System.Drawing.Point(6, 128);
-            this.labelP1BombCountTBC3.Name = "labelP1BombCountTBC3";
-            this.labelP1BombCountTBC3.Size = new System.Drawing.Size(98, 13);
-            this.labelP1BombCountTBC3.TabIndex = 69;
-            this.labelP1BombCountTBC3.Text = "Bomb Count TBC3:";
-            // 
-            // textBoxP2BombCountTBC3Write
-            // 
-            this.textBoxP2BombCountTBC3Write.Location = new System.Drawing.Point(173, 125);
-            this.textBoxP2BombCountTBC3Write.Name = "textBoxP2BombCountTBC3Write";
-            this.textBoxP2BombCountTBC3Write.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP2BombCountTBC3Write.TabIndex = 96;
-            // 
-            // textBoxP2BombCountTBC3Read
-            // 
-            this.textBoxP2BombCountTBC3Read.Location = new System.Drawing.Point(117, 125);
-            this.textBoxP2BombCountTBC3Read.Name = "textBoxP2BombCountTBC3Read";
-            this.textBoxP2BombCountTBC3Read.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP2BombCountTBC3Read.TabIndex = 95;
-            // 
-            // checkBoxP2BombCountTBC3
-            // 
-            this.checkBoxP2BombCountTBC3.AutoSize = true;
-            this.checkBoxP2BombCountTBC3.Location = new System.Drawing.Point(229, 128);
-            this.checkBoxP2BombCountTBC3.Name = "checkBoxP2BombCountTBC3";
-            this.checkBoxP2BombCountTBC3.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxP2BombCountTBC3.TabIndex = 94;
-            this.checkBoxP2BombCountTBC3.UseVisualStyleBackColor = true;
-            // 
-            // labelP2BombCountTBC3
-            // 
-            this.labelP2BombCountTBC3.AutoSize = true;
-            this.labelP2BombCountTBC3.Location = new System.Drawing.Point(6, 129);
-            this.labelP2BombCountTBC3.Name = "labelP2BombCountTBC3";
-            this.labelP2BombCountTBC3.Size = new System.Drawing.Size(98, 13);
-            this.labelP2BombCountTBC3.TabIndex = 93;
-            this.labelP2BombCountTBC3.Text = "Bomb Count TBC3:";
-            // 
-            // textBoxP2BombCountTBC2Write
-            // 
-            this.textBoxP2BombCountTBC2Write.Location = new System.Drawing.Point(173, 99);
-            this.textBoxP2BombCountTBC2Write.Name = "textBoxP2BombCountTBC2Write";
-            this.textBoxP2BombCountTBC2Write.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP2BombCountTBC2Write.TabIndex = 92;
-            // 
-            // textBoxP2BombCountTBC1Write
-            // 
-            this.textBoxP2BombCountTBC1Write.Location = new System.Drawing.Point(173, 73);
-            this.textBoxP2BombCountTBC1Write.Name = "textBoxP2BombCountTBC1Write";
-            this.textBoxP2BombCountTBC1Write.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP2BombCountTBC1Write.TabIndex = 91;
-            // 
-            // textBoxP2BombCountTBC2Read
-            // 
-            this.textBoxP2BombCountTBC2Read.Location = new System.Drawing.Point(117, 99);
-            this.textBoxP2BombCountTBC2Read.Name = "textBoxP2BombCountTBC2Read";
-            this.textBoxP2BombCountTBC2Read.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP2BombCountTBC2Read.TabIndex = 90;
-            // 
-            // textBoxP2BombCountTBC1Read
-            // 
-            this.textBoxP2BombCountTBC1Read.Location = new System.Drawing.Point(117, 73);
-            this.textBoxP2BombCountTBC1Read.Name = "textBoxP2BombCountTBC1Read";
-            this.textBoxP2BombCountTBC1Read.Size = new System.Drawing.Size(50, 20);
-            this.textBoxP2BombCountTBC1Read.TabIndex = 89;
-            // 
-            // checkBoxP2BombCountTBC2
-            // 
-            this.checkBoxP2BombCountTBC2.AutoSize = true;
-            this.checkBoxP2BombCountTBC2.Location = new System.Drawing.Point(229, 102);
-            this.checkBoxP2BombCountTBC2.Name = "checkBoxP2BombCountTBC2";
-            this.checkBoxP2BombCountTBC2.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxP2BombCountTBC2.TabIndex = 88;
-            this.checkBoxP2BombCountTBC2.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxP2BombCountTBC1
-            // 
-            this.checkBoxP2BombCountTBC1.AutoSize = true;
-            this.checkBoxP2BombCountTBC1.Location = new System.Drawing.Point(229, 76);
-            this.checkBoxP2BombCountTBC1.Name = "checkBoxP2BombCountTBC1";
-            this.checkBoxP2BombCountTBC1.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxP2BombCountTBC1.TabIndex = 87;
-            this.checkBoxP2BombCountTBC1.UseVisualStyleBackColor = true;
-            // 
-            // labelP2BombCountTBC2
-            // 
-            this.labelP2BombCountTBC2.AutoSize = true;
-            this.labelP2BombCountTBC2.Location = new System.Drawing.Point(6, 103);
-            this.labelP2BombCountTBC2.Name = "labelP2BombCountTBC2";
-            this.labelP2BombCountTBC2.Size = new System.Drawing.Size(98, 13);
-            this.labelP2BombCountTBC2.TabIndex = 86;
-            this.labelP2BombCountTBC2.Text = "Bomb Count TBC2:";
-            // 
-            // labelP2BombCountTBC1
-            // 
-            this.labelP2BombCountTBC1.AutoSize = true;
-            this.labelP2BombCountTBC1.Location = new System.Drawing.Point(6, 77);
-            this.labelP2BombCountTBC1.Name = "labelP2BombCountTBC1";
-            this.labelP2BombCountTBC1.Size = new System.Drawing.Size(98, 13);
-            this.labelP2BombCountTBC1.TabIndex = 85;
-            this.labelP2BombCountTBC1.Text = "Bomb Count TBC1:";
             // 
             // Form1
             // 
@@ -1165,6 +1168,7 @@
             this.Controls.Add(this.groupBoxPlayer2);
             this.Controls.Add(this.groupBoxPlayer1);
             this.Controls.Add(this.groupBoxGlobal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBoxOverride.ResumeLayout(false);

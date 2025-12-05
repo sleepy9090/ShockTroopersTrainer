@@ -1,6 +1,6 @@
 ﻿/**
  *  File           Form1.cs
- *  Brief          Shock Troopers (GOG Version) PC Trainer
+ *  Brief          Shock Troopers (GOG Version) PC Trainer for use with version: setup_shock_troopers_gog-3_(12274).exe
  *  Copyright      2025 Shawn M. Crawford [sleepy]
  *  Date           11/28/2025
  *
@@ -149,7 +149,7 @@ namespace ShockTroopersTrainer
             StartPosition = FormStartPosition.CenterScreen;
 
             Text = "Shock Troopers (GOG Version) Trainer by sLeEpY9090";
-            textBoxLog.Text = "Shock Troopers (GOG Version) Trainer by sLeEpY9090" + Environment.NewLine;
+            textBoxLog.Text = "Shock Troopers (GOG Version) Trainer by sLeEpY9090" + Environment.NewLine + "For use with version: setup_shock_troopers_gog-3_(12274).exe" + Environment.NewLine;
 
             PopulateWeaponTypes();
             PopulateScore();
@@ -207,6 +207,11 @@ namespace ShockTroopersTrainer
         private void PopulateScore()
         {
             // TODO: This needs to include hex? or its parsing wrong.
+            // 0-9 = 0-9, 16-25=10-19
+            // counts 0 to 9, then 16 to 19, etc
+            // counts in decimal but displays as hex, this way A-F never shows in score also, but why is it done this way?
+            // code (hex):    0,1,2,3,4,5,6,7,8,9,16,17,18,...
+            // display (dec): 0,1,2,3,4,5,6,7,8,9,10,11,12,...
             for (int i = 0; i < 100; i++)
             {
                 comboBoxP1Score1.Items.Add(i);
@@ -220,15 +225,16 @@ namespace ShockTroopersTrainer
                 comboBoxP2Score4.Items.Add(i);
             }
 
-            comboBoxP1Score1.SelectedIndex = 99;
-            comboBoxP1Score2.SelectedIndex = 99;
-            comboBoxP1Score3.SelectedIndex = 99;
-            comboBoxP1Score4.SelectedIndex = 99;
+            // Convert the above to hex before writing it back
+            comboBoxP1Score1.SelectedIndex = 63; // 63h = 99d
+            comboBoxP1Score2.SelectedIndex = 63; // 63h = 99d
+            comboBoxP1Score3.SelectedIndex = 63; // 63h = 99d
+            comboBoxP1Score4.SelectedIndex = 63; // 63h = 99d
 
-            comboBoxP2Score1.SelectedIndex = 99;
-            comboBoxP2Score2.SelectedIndex = 99;
-            comboBoxP2Score3.SelectedIndex = 99;
-            comboBoxP2Score4.SelectedIndex = 99;
+            comboBoxP2Score1.SelectedIndex = 63; // 63h = 99d
+            comboBoxP2Score2.SelectedIndex = 63; // 63h = 99d
+            comboBoxP2Score3.SelectedIndex = 63; // 63h = 99d
+            comboBoxP2Score4.SelectedIndex = 63; // 63h = 99d
         }
 
         public void SetDefaultTextBoxValues()
@@ -1093,7 +1099,7 @@ namespace ShockTroopersTrainer
 
                 #region Score
 
-                /* TODO: Figure out score, mis of hex and dec between displaying? hex not shown but decimal alone is off when displayed
+                /* TODO: Convert the selected value in the combobox to hex before writing it back
                  * P1 Score
                     byte, hex
                     example score: 34127856
@@ -1134,7 +1140,7 @@ namespace ShockTroopersTrainer
                     // 12345678
                     // | ED19 | ED18 | ED1B | ED1A |
                     // | 12   | 34   | 56   | 78   |
-                    int eD19 = comboBoxP1Score1.SelectedIndex;
+                    int eD19 = comboBoxP1Score1.SelectedIndex; //.ToString("X");
                     int eD18 = comboBoxP1Score2.SelectedIndex;
                     int eD1B = comboBoxP1Score3.SelectedIndex;
                     int eD1A = comboBoxP1Score4.SelectedIndex;
