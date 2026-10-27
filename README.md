@@ -1,6 +1,10 @@
 # Game Trainer for Shock Troopers (GOG Version)
 ## Setup Version: setup_shock_troopers_gog-3_(12274)
 
+<img width="786" height="593" alt="image" src="https://github.com/user-attachments/assets/2b8ce70b-dc32-4796-9e0e-37b954375a3f" />
+
+<img width="1368" height="800" alt="image" src="https://github.com/user-attachments/assets/7eac1da4-ea15-4a43-9ea2-c7ec0cba5a54" />
+
 Values:
 
 P1 Invincible
